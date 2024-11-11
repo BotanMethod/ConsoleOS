@@ -6,9 +6,14 @@ import getpass
 from shutil import copytree, rmtree
 import psutil
 import random
+import tkinter
+import os 
+from tkinter import *
+from tkinter.messagebox import *
+from tkinter.filedialog import *
 
 version = str('1.2.0')
-versionyear = str('1.2.0')
+versionyear = str('2024')
 
 # Author: UntitledCatDeveloper, also known as BotanMethod
 
@@ -61,7 +66,7 @@ subprocess.run('cls' if os.name == 'nt' else 'clear', shell=True)
 class Consoleplatform(cmd.Cmd):
     intro = f"Console Operating System. Full Version. [{version}], {versionyear}\n "
     time.sleep(1.5)
-    prompt = f"💠 ConsoleOS | 🖥️ User: [{getpass.getuser()}] | 📂 [{os.getcwd()}] / "
+    prompt = f"💠 ConsoleOS | 🖥️ User: [{getpass.getuser()}] | 📂 [{os.getcwd()}] $ "
     
     def __init__(self):
         super().__init__()
@@ -108,7 +113,7 @@ class Consoleplatform(cmd.Cmd):
         'Shows info about ConsoleOS'
         print("Information about ConsoleOS from Developer:")
         print(f"[Your] OS Base: {os.name}") 
-        print("Version: 1.2, 2024")
+        print("Version: 1.2.0, 2024")
         print(f"Username: {getpass.getuser()}")
         print("Developer: BDevelopment")
 
@@ -158,7 +163,7 @@ class Consoleplatform(cmd.Cmd):
         try:
             os.chdir(path)
             print(" ")
-            self.prompt = f"💠 ConsoleOS | 🖥️ User: [{getpass.getuser()}] | 📂 [{os.getcwd()}] / "
+            self.prompt = f"💠 ConsoleOS | 🖥️ User: [{getpass.getuser()}] | 📂 [{os.getcwd()}] $ "
         except Exception as e:
             print(f"Error: {e}")
             
@@ -201,14 +206,14 @@ class Consoleplatform(cmd.Cmd):
             print(f"Error: {e}")
             
     def do_edit(self, filename):
-        'Edits file: edit [file_name]'
+        'Edits file with notepad: edit [file_name]'
         try:
             subprocess.run(['notepad.exe', filename])
         except Exception as e:
             print(f"Error: {e}")
         
     def do_code(self, args):
-        'Edits file: code [file_name]'
+        'Opens code editor: code [file_name]'
         try:
             Editor.editor_on(self=Editor)
         except Exception as e:
