@@ -72,7 +72,7 @@ class Consoleplatform(cmd.Cmd):
         super().__init__()
     
     def do_calc(self, arg):
-        'Starts the calculator'
+        'Starts the calculator: calc'
         while True:
             try:
                 num1 = float(input("Enter first number (or 's' for stop calculating) | "))
@@ -113,50 +113,39 @@ class Consoleplatform(cmd.Cmd):
         'Shows info about ConsoleOS'
         print("Information about ConsoleOS from Developer:")
         print(f"[Your] OS Base: {os.name}") 
-        print("Version: 1.2.0, 2024")
+        print(f"Version: {version}, {versionyear}")
         print(f"Username: {getpass.getuser()}")
         print("Developer: BDevelopment")
 
-    def do_shutdown(self, arg):
+    def do_shutdown(self, time):
         'Shuts down your device'
         b = input("Are you sure you want to shut down device? [Y/N] | ")
         if b.lower() == "y":
             subprocess.run('cls' if os.name == 'nt' else 'clear', shell=True)
-            time_input = int(input("Enter time in seconds for shutdown: "))
-            subprocess.run('cls' if os.name == 'nt' else 'clear', shell=True)
             print("Shutting down your computer...")
             time.sleep(1)
-            os.system(f"shutdown /s /t {time_input}")
+            os.system(f"shutdown /s /t {time}")
         else:
             print("Shutdown cancelled.")
             
-    def do_reboot(self, arg):
-        'Reboots your device'
+    def do_reboot(self, time):
+        'Reboots your device: reboot [time]'
         c = input("Are you sure you want to reboot device? [Y/N] | ")
         if c.lower() == "y":
             subprocess.run('cls' if os.name == 'nt' else 'clear', shell=True)
-            time_input = int(input("Enter time in seconds for reboot: "))
-            subprocess.run('cls' if os.name == 'nt' else 'clear', shell=True)
             print("Rebooting your computer...")
             time.sleep(1)
-            os.system(f"shutdown /r /t {time_input}")
+            os.system(f"shutdown /r /t {time}")
         else:
             print("Reboot cancelled.")
             
     def do_cln(self, arg):
-        'Cleans the Console'
+        'Cleans the Console: cln'
         subprocess.run('cls' if os.name == 'nt' else 'clear', shell=True)
 
     def do_echo(self, text):
         'Prints your text: echo [text]'
         print(text)
-        
-    def do_util(self, utilname):
-        'Runs util programs: util [util_name]'
-        try:
-            subprocess.run(['python', f'system/{utilname}.py'])  
-        except Exception as e:
-            print(f"Error: {e}")
             
     def do_cd(self, path):
         'Moves to the specified directory: cd [path]'
@@ -168,11 +157,11 @@ class Consoleplatform(cmd.Cmd):
             print(f"Error: {e}")
             
     def do_ls(self, arg):
-        "Shows folder's contents"
+        "Shows folder's contents: ls"
         print("\n".join(os.listdir(os.getcwd())))
         
     def do_mkdir(self, dirname):
-        'Creates a new directory: create_dir [dir_name]'
+        'Creates a new directory: mkdir [dir_name]'
         try:
             os.makedirs(dirname)
             print(f"Directory '{dirname}' was created.")
@@ -180,7 +169,7 @@ class Consoleplatform(cmd.Cmd):
             print(f"Error: {e}")
             
     def do_rmdir(self, dirname):
-        'Deletes directory: delete_dir [dir_name]'
+        'Deletes directory: rmdir [dir_name]'
         try:
             rmtree(dirname)
             print(f"Directory '{dirname}' was deleted.")
@@ -197,7 +186,7 @@ class Consoleplatform(cmd.Cmd):
             print(f'Error: {e}')
             
     def do_mkfile(self, filename):
-        'Creates an empty file: create_file [file_name]'
+        'Creates an empty file: mkfile [file_name]'
         try:
             with open(filename, 'w') as f:
                 pass
@@ -213,14 +202,14 @@ class Consoleplatform(cmd.Cmd):
             print(f"Error: {e}")
         
     def do_code(self, args):
-        'Opens code editor: code [file_name]'
+        'Opens code editor: code '
         try:
             Editor.editor_on(self=Editor)
         except Exception as e:
             print(f"Error: {e}")
             
     def do_rmfile(self, filename):
-        'Deletes file: delete_file [file_name]'
+        'Deletes file: rmfile [file_name]'
         try:
             os.remove(filename)
             print(f"File '{filename}' was deleted.")
@@ -228,7 +217,7 @@ class Consoleplatform(cmd.Cmd):
             print(f"Error: {e}")
             
     def do_rnfile(self, args):
-        'Renames the file: change_name [cur_name] [new_name]'
+        'Renames the file: rnfile [cur_name] [new_name]'
         try:
             old_name, new_name = args.split()
             os.rename(old_name, new_name)
@@ -237,7 +226,7 @@ class Consoleplatform(cmd.Cmd):
             print(f"Error: {e}")
             
     def do_rfile(self, filename):
-        'Reads file: read_file [file_name]'
+        'Reads file: rfile [file_name]'
         try:
             with open(filename, 'r') as f:
                 print(f.read())
@@ -256,7 +245,7 @@ class Consoleplatform(cmd.Cmd):
             print(f"Error: {e}")
             
     def do_find(self, filename):
-        'Finds for a file in the current directory: search_file [file_name]'
+        'Finds for a file in the current directory: find [file_name]'
         found = False
         for root, dirs, files in os.walk(os.getcwd()):
             if filename in files:
@@ -294,7 +283,7 @@ class Consoleplatform(cmd.Cmd):
         time.sleep(1)
         
     def do_chkdsk(self, arg):
-        'Shows information about current disk'
+        'Shows information about current disk: chkdsk'
         usage = psutil.disk_usage('/')
         print(f"Total: {usage.total / (1024**3):.2f} GB")
         print(f"Used: {usage.used / (1024**3):.2f} GB")
@@ -315,7 +304,7 @@ class Consoleplatform(cmd.Cmd):
             print(f"Error: {e}")
 
     def do_date(self, arg):
-        'Shows the current date and time'
+        'Shows the current date and time: date'
         print("Current date and time:", time.strftime("%Y-%m-%d %H:%M:%S"))
 
 editor = Editor()
