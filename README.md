@@ -10,6 +10,6 @@ At the time of **23/10/2024**, this OS does NOT work on **Linux**, only on **Win
 I'm trying to fix this problem, so, Linux users, wait.
 
 ## Social Medias
-Telegram: ConsoleOS
+Telegram channel: ConsoleOS
 
 
