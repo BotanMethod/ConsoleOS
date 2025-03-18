@@ -5,6 +5,10 @@ It's open source! You can do anything with ConsoleOS!
 ## One thing you should do before changing ConsoleOS:
 Download the latest release and unzip the files to the folder where you will work with the ConsoleOS (You can go to another folder using the "cd" command)
 
+## Tags for ConsoleOS versions:
+L - light (A light version of ConsoleOS, which has reduced functionality but has low system requirements compared to the full version of ConsoleOS)
+F - full (A full version of ConsoleOS)
+
 ## WARNING!
 At the time of **23/10/2024**, this OS does NOT work on **Linux**, only on **Windows 7, 8, 8.1, 10, 11**. 
 I'm trying to fix this problem, so, Linux users, wait.
