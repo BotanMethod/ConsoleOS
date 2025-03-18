@@ -6,7 +6,7 @@ It's open source! You can do anything with ConsoleOS!
 Download the latest release and unzip the files to the folder where you will work with the ConsoleOS (You can go to another folder using the "cd" command)
 
 ## Tags for ConsoleOS versions:
-L - light (A light version of ConsoleOS, which has reduced functionality but has low system requirements compared to the full version of ConsoleOS)
+L - light (A light version of ConsoleOS, which has reduced functionality but has low system requirements compared to the full version of ConsoleOS) 
 F - full (A full version of ConsoleOS)
 
 ## WARNING!
