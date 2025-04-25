@@ -9,6 +9,8 @@ Download the latest release and unzip the files to the folder where you will wor
 L - light (A light version of ConsoleOS, which has reduced functionality but has low system requirements compared to the full version of ConsoleOS)  
 F - full (A full version of ConsoleOS)
 
+**I'm going to drop the lightweight version of ConsoleOS and move to a single system through a few upgrades**
+
 ## WARNING!
 At the time of **23/10/2024**, this OS does NOT work on **Linux**, only on **Windows 7, 8, 8.1, 10, 11**. 
 I'm trying to fix this problem, so, Linux users, wait.
