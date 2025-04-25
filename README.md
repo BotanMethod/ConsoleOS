@@ -2,8 +2,10 @@
 
 It's open source! You can do anything with ConsoleOS!
 
-## One thing you should do before changing ConsoleOS:
-Download the latest release and unzip the files to the folder where you will work with the ConsoleOS (You can go to another folder using the "cd" command)
+## Guide how to install CosnoleOS:
+1. Download latest release or copy code from repo.
+2. Run installer.py from cmd if you copied from repo or run installer.exe
+3. Follow guide in the installer
 
 ## Tags for ConsoleOS versions:
 L - light (A light version of ConsoleOS, which has reduced functionality but has low system requirements compared to the full version of ConsoleOS)  
@@ -12,10 +14,7 @@ F - full (A full version of ConsoleOS)
 **I'm going to drop the lightweight version of ConsoleOS and move to a single system through a few upgrades**
 
 ## WARNING!
-At the time of **23/10/2024**, this OS does NOT work on **Linux**, only on **Windows 7, 8, 8.1, 10, 11**. 
-I'm trying to fix this problem, so, Linux users, wait.
+**ConsoleOS does not currently support Linux distros**
 
-## Social Medias
-Telegram channel: ConsoleOS
 
 
