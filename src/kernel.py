@@ -1,22 +1,18 @@
 import cmd
-import json
 import time
 import getpass
 import os
 from System.commandlist import ConsoleCommands, MusicPlayer
+from System.commandlist import version, versionyear
 
 class ConsoleOS(cmd.Cmd, ConsoleCommands):
     def __init__(self):
         super().__init__()
-        self.load_config()
         self.intro = self.get_intro()
         self.update_prompt()
-    
-    def load_config(self):
-        with open('Configuration/cosconfig.json') as f:
-            config = json.load(f)
-        self.version = config['version']
-        self.versionyear = config['versionyear']
+        
+    version = version
+    versionyear = versionyear
     
     def get_intro(self):
         return (
@@ -27,7 +23,7 @@ class ConsoleOS(cmd.Cmd, ConsoleCommands):
     def update_prompt(self):
         self.prompt = (
             f"[COS] ConsoleOS / User: [{getpass.getuser()}] "
-            f"/ Dir: [{os.getcwd()}] $ "
+            f"/ Dir: [{os.getcwd()}] # "
         )
     
     def do_Music_player(self, arg):
