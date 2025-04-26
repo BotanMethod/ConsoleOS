@@ -1,17 +1,9 @@
 # This is my own OS, that made in console with python.
 
-It's open source! You can do anything with ConsoleOS!
+Today, **26/04/2025**, ConsoleOS reached new generation. Now it's not single file, it's chain of files, just like in a real OS!
 
-## Guide how to install CosnoleOS:
-1. Download latest release or copy code from repo.
-2. Run installer.py from cmd if you copied from repo or run installer.exe
-3. Follow guide in the installer
-
-## Tags for ConsoleOS versions:
-L - light (A light version of ConsoleOS, which has reduced functionality but has low system requirements compared to the full version of ConsoleOS)  
-F - full (A full version of ConsoleOS)
-
-**I'm going to drop the lightweight version of ConsoleOS and move to a single system through a few upgrades**
+## Information
+If you want to launch ConsoleOS, you can just run launch.bat or run main.py from terminal
 
 ## WARNING!
 **ConsoleOS does not currently support Linux distros**
