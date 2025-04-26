@@ -7,7 +7,7 @@ import psutil
 import pygame
 import threading
 
-version = '1.3.0 [F]'
+version = '1.3.1'
 versionyear = '2025'
 
 class MusicPlayer:
@@ -16,9 +16,9 @@ class MusicPlayer:
 
     def __init__(self):
         super().__init__()
-        self.is_playing = False  # Флаг для отслеживания состояния воспроизведения
-        self.current_thread = None  # Переменная для хранения текущего потока
-        pygame.mixer.init()  # Инициализация модуля pygame для работы со звуком
+        self.is_playing = False
+        self.current_thread = None 
+        pygame.mixer.init()
 
     def do_cd(self, path):
         'Moves to the specified directory: cd [path]'
@@ -103,28 +103,28 @@ class MusicPlayer:
     def do_volume_up(self, arg):
         'Increases the volume: volume_up'
         current_volume = pygame.mixer.music.get_volume()
-        new_volume = min(current_volume + 0.1, 1.0)  # Максимум 1.0
+        new_volume = min(current_volume + 0.1, 1.0)
         pygame.mixer.music.set_volume(new_volume)
         print(f"Volume increased to {new_volume:.1f}")
 
     def do_volume_down(self, arg):
         'Decreases the volume: volume_down'
         current_volume = pygame.mixer.music.get_volume()
-        new_volume = max(current_volume - 0.1, 0.0)  # Минимум 0.0
+        new_volume = max(current_volume - 0.1, 0.0)
         pygame.mixer.music.set_volume(new_volume)
         print(f"Volume decreased to {new_volume:.1f}")
 
     def do_exit(self, arg):
         'Exits the music player: exit'
         print("Exiting music player.")
-        return True  # Возвращаем True для выхода из cmd.Cmd
+        return True  
 
 class ConsoleCommands:
     """Класс со всеми командами для консоли"""
     def do_Music_player(self, arg):
         'Opens the music player: Music_player'
         print("Starting Music Player...")
-        MusicPlayer().cmdloop()  # Запускаем цикл команд для MusicPlayer
+        MusicPlayer().cmdloop()  
     
     def do_calc(self, arg):
         'Starts the calculator: calc'
@@ -172,21 +172,21 @@ class ConsoleCommands:
         print("Developer: BDevelopment")
         print('''              .,-:;//;:=,
           . :H@@@MM@M#H/.,+%;,
-       ,/X+ +M@@M@MM%=,-%HMMM@X/,
+       ,/X+ +newgenM%=,-%HMMM@X/,
      -+@MM; $M@@MH+-,;XMMMM@MMMM@+-
-    ;@M@@M- XM@X;. -+XXXXXHHH@M@M#@/.
+    ;@M@42- XM@X;. -+bigupdateM@M#@/.
   ,%MM@@MH ,@%=             .---=-=:=,.
   =@#@@@MX.,                -%HX$$%%%:;
  =-./@M@M$                   .;@MMMM@MM:
  X@/ -$MM/                    . +MM@@@M$
 ,@M@H: :@:                    . =X#@@@@-
 ,@@@MMX, .                    /H- ;@M@M=
-.H@@@@M@+,                    %MM+..%#$.
- /MMMM@MMH/.                  XM@MH; =;
-  /%+%$XHH@$=              , .H@@@@MX,
-   .=--------.           -%H.,@@@@@MX,
-   .%MM@@@HHHXX$$$%+- .:$MMX =M@@MM%.
-     =XMMM@MM@MM#H;,-+HMM@M+ /MMMX=
+.H@@@@M@+,                    new+..%#$.
+ /consoleos/                  update =;
+  /%+%$XHH@$=              , .inMMM@MX,
+   .=botan---.           -%H.,??/??MX,
+   .%methodHHXX$$$%+- .:$MMX ???@MM%.
+     =абаюнда@MM#H;,-+HMM@M+ /MMMX=
        =%@M@M#@$-.=$@MM@@@M; %M%=
          ,:+$+-,/H#CONSOLEOS =,
                =++%%%%+/:-.''')
