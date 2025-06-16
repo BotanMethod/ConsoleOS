@@ -6,7 +6,7 @@ Today, **26/04/2025**, ConsoleOS reached new generation. Now it's not single fil
 If you want to launch ConsoleOS, you can run main.py from terminal
 
 ## WARNING!
-**ConsoleOS does not currently support Linux distros**
+**ConsoleOS may be run on Linux distros with minor errors so i developing version for Linux**
 
 
 
